@@ -22,7 +22,7 @@ if not conn:
     sys.exit(1)
 conn = conn.split()[2]
 try:
-    data = subprocess.check_output(["ip", "-j", "address", "show", "scope", "global"])
+    data = subprocess.check_output(["ip", "-j", "address", "show", "scope", "global", "-deprecated"])
     data = json.loads(data)
 except Exception:
     print("could not read ip address info", file=sys.stderr)
